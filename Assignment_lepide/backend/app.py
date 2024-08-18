@@ -4,7 +4,10 @@ import os
 from summarizer import summarize_text
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
+
+CORS(app, resources={r"/*": {"origins": "http://localhost:5000"}})
+
 
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
